@@ -1,46 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:my_gym_track/src/presentation/pages/home/widgets/item_template_widget.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+          children: const [
+            ItemTemplateWidget(title: 'Treino A'),
+            SizedBox(height: 10),
+            ItemTemplateWidget(title: 'Todos os treinos'),
+            SizedBox(height: 10),
+            ItemTemplateWidget(title: 'Histórico'),
+            SizedBox(height: 10),
+            ItemTemplateWidget(title: 'Calendário'),
+            SizedBox(height: 10),
+            ItemTemplateWidget(title: 'Novo treino'),
+            SizedBox(height: 10),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
