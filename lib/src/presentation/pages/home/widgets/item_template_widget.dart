@@ -3,7 +3,11 @@ import 'package:my_gym_track/src/application/theme/custom_colors.dart';
 
 class ItemTemplateWidget extends StatelessWidget {
   final String title;
-  const ItemTemplateWidget({Key? key, required this.title}) : super(key: key);
+  final String? caption;
+  final String? photoName;
+  const ItemTemplateWidget(
+      {Key? key, required this.title, this.photoName, this.caption})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +18,36 @@ class ItemTemplateWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: CustomColors.lighterGrey,
         border: Border.all(color: CustomColors.primaryGreen, width: 3),
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(8),
+        ),
+        image: photoName != null
+            ? DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage(photoName!),
+                opacity: 0.6,
+              )
+            : null,
       ),
       child: Align(
         alignment: Alignment.centerLeft,
-        child: Text(
-          title,
-          style: const TextStyle(color: CustomColors.white),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                color: CustomColors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: CustomColors.white,
+              size: 30,
+            ),
+          ],
         ),
       ),
     );
