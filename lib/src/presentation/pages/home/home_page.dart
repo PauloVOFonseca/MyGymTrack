@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_gym_track/src/application/constants/images_assets.dart';
+import 'package:my_gym_track/src/presentation/pages/home/widgets/calendar_widget.dart';
 import 'package:my_gym_track/src/presentation/pages/home/widgets/item_template_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                 caption: 'Acesse o histórico de treinos',
               ),
               SizedBox(height: 16),
-              ItemTemplateWidget(title: 'Calendário'),
+              CalendarWidget(),
               SizedBox(height: 16),
               ItemTemplateWidget(title: 'Novo treino'),
               SizedBox(height: 16),
