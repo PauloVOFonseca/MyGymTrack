@@ -5,9 +5,14 @@ class ItemTemplateWidget extends StatelessWidget {
   final String title;
   final String? caption;
   final String? photoName;
-  const ItemTemplateWidget(
-      {Key? key, required this.title, this.photoName, this.caption})
-      : super(key: key);
+  final Function()? onTap;
+  const ItemTemplateWidget({
+    Key? key,
+    required this.title,
+    this.photoName,
+    this.caption,
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +47,11 @@ class ItemTemplateWidget extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const Icon(
-              Icons.arrow_forward_ios_rounded,
+            IconButton(
+              onPressed: onTap,
+              icon: const Icon(Icons.arrow_forward_ios_rounded),
               color: CustomColors.white,
-              size: 30,
+              iconSize: 30,
             ),
           ],
         ),
