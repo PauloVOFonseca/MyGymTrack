@@ -42,12 +42,7 @@ class ItemTemplateWidget extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Text(
             title,
-            style: const TextStyle(
-              color: CustomColors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              overflow: TextOverflow.clip,
-            ),
+            style: Theme.of(context).textTheme.headline1,
           ),
         ),
       ),
