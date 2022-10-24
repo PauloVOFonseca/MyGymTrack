@@ -20,10 +20,6 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Treino 2 de 30',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
-              ),
               const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,8 +45,6 @@ class _HomePageState extends State<HomePage> {
                 caption: 'Acesse o histórico de treinos',
               ),
               const SizedBox(height: 16),
-              // const CalendarWidget(),
-              // const SizedBox(height: 16),
               const ItemTemplateWidget(title: 'Novo treino'),
               const SizedBox(height: 16),
               ItemTemplateWidget(
