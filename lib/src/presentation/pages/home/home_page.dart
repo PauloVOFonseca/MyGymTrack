@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 16),
+              //TODO that width only exist if someone create a training
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
