@@ -29,32 +29,46 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 32),
-          Row(
-            children: [
-              IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: const Icon(Icons.arrow_back_ios),
-                color: CustomColors.black,
-                iconSize: 30,
-              ),
-              const SizedBox(width: 100),
-              const Text(
-                'Exercícios',
-                style: TextStyle(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 32),
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon: const Icon(Icons.arrow_back_ios),
                   color: CustomColors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
+                  iconSize: 30,
+                ),
+                const SizedBox(width: 100),
+                Text(
+                  'Exercícios',
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: muscleList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text(
+                    muscleList[index],
+                    style: Theme.of(context).textTheme.labelMedium,
+                  );
+                },
+                separatorBuilder: (context, index) => const SizedBox(
+                  width: 10,
                 ),
               ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Row()
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
