@@ -27,7 +27,7 @@ class CustomThemes {
       labelMedium: TextStyle(
         color: CustomColors.black,
         fontSize: 16,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
       ),
     ),
   );

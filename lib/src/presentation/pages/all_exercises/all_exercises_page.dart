@@ -10,6 +10,8 @@ class AllExercisesPage extends StatefulWidget {
 }
 
 class _AllExercisesPageState extends State<AllExercisesPage> {
+  final ValueNotifier<int> selected = ValueNotifier<int>(0);
+
   final List<String> muscleList = [
     'Todos',
     'Bíceps',
@@ -52,19 +54,33 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
             ),
             const SizedBox(height: 8),
             Expanded(
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: muscleList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Text(
-                    muscleList[index],
-                    style: Theme.of(context).textTheme.labelMedium,
+              child: ValueListenableBuilder(
+                valueListenable: selected,
+                builder: (context, value, child) {
+                  return ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: muscleList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return GestureDetector(
+                        onTap: () => selected.value = index,
+                        child: Text(
+                          muscleList[index],
+                          style: selected.value == index
+                              ? Theme.of(context)
+                                  .textTheme
+                                  .labelMedium
+                                  ?.copyWith(
+                                    color: CustomColors.darkerGreen,
+                                  )
+                              : Theme.of(context).textTheme.labelMedium,
+                        ),
+                      );
+                    },
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(width: 10),
                   );
                 },
-                separatorBuilder: (context, index) => const SizedBox(
-                  width: 10,
-                ),
               ),
             ),
           ],
