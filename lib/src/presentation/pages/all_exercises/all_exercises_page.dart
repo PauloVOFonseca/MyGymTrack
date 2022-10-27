@@ -59,6 +59,7 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
                 builder: (context, value, child) {
                   return ListView.separated(
                     scrollDirection: Axis.horizontal,
+                    physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: muscleList.length,
                     itemBuilder: (BuildContext context, int index) {
