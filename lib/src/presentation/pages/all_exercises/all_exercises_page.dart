@@ -53,14 +53,14 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
               ],
             ),
             const SizedBox(height: 8),
-            Expanded(
+            SizedBox(
+              height: 40,
               child: ValueListenableBuilder(
                 valueListenable: selected,
                 builder: (context, value, child) {
                   return ListView.separated(
                     scrollDirection: Axis.horizontal,
                     physics: const BouncingScrollPhysics(),
-                    shrinkWrap: true,
                     itemCount: muscleList.length,
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
