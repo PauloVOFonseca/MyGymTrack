@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_gym_track/src/domain/mocks/exercises_list.dart';
 
 import '../../../application/theme/custom_colors.dart';
 
@@ -82,6 +83,23 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
                         const SizedBox(width: 10),
                   );
                 },
+              ),
+            ),
+            Expanded(
+              child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
+                itemCount: EXERCISES_LIST_MOCK.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () => selected.value = index,
+                    child: Text(
+                      EXERCISES_LIST_MOCK[index].name,
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) =>
+                    const Divider(thickness: 2),
               ),
             ),
           ],

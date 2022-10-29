@@ -24,6 +24,11 @@ class CustomThemes {
         fontSize: 20,
         fontWeight: FontWeight.w400,
       ),
+      bodyText1: TextStyle(
+        color: CustomColors.black,
+        fontSize: 18,
+        fontWeight: FontWeight.w400,
+      ),
       labelMedium: TextStyle(
         color: CustomColors.black,
         fontSize: 16,
