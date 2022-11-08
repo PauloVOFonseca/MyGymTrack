@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_gym_track/src/domain/mocks/exercises_list.dart';
-
+import 'package:my_gym_track/src/application/constants/muscle_list.dart';
+import 'package:my_gym_track/src/application/services/locator.dart';
+import 'package:my_gym_track/src/presentation/pages/all_exercises/all_exercises_controller.dart';
 import '../../../application/theme/custom_colors.dart';
 
 class AllExercisesPage extends StatefulWidget {
@@ -11,23 +12,13 @@ class AllExercisesPage extends StatefulWidget {
 }
 
 class _AllExercisesPageState extends State<AllExercisesPage> {
-  final ValueNotifier<int> selected = ValueNotifier<int>(0);
+  final AllExercisesController pageController = getIt<AllExercisesController>();
 
-  final List<String> muscleList = [
-    'Todos',
-    'Bíceps',
-    'Tríceps',
-    'Costas',
-    'Peito',
-    'Ombro',
-    'Lombar',
-    'Trapezio',
-    'Antebraço',
-    'Gluteo',
-    'Quadriceps',
-    'Posterior',
-    'Panturrilha',
-  ];
+  @override
+  void initState() {
+    super.initState();
+    pageController.getAllExercises();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,18 +48,22 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
             SizedBox(
               height: 40,
               child: ValueListenableBuilder(
-                valueListenable: selected,
+                valueListenable: pageController.selected,
                 builder: (context, value, child) {
                   return ListView.separated(
                     scrollDirection: Axis.horizontal,
                     physics: const BouncingScrollPhysics(),
-                    itemCount: muscleList.length,
+                    itemCount: MUSCLE_LIST.length,
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
-                        onTap: () => selected.value = index,
+                        onTap: () {
+                          pageController.selected.value = index;
+                          pageController.updateExerciseList(MUSCLE_LIST[index]);
+                          setState(() {});
+                        },
                         child: Text(
-                          muscleList[index],
-                          style: selected.value == index
+                          MUSCLE_LIST[index],
+                          style: pageController.selected.value == index
                               ? Theme.of(context)
                                   .textTheme
                                   .labelMedium
@@ -86,21 +81,29 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
               ),
             ),
             Expanded(
-              child: ListView.separated(
-                physics: const BouncingScrollPhysics(),
-                itemCount: EXERCISES_LIST_MOCK.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
-                    onTap: () => selected.value = index,
-                    child: Text(
-                      EXERCISES_LIST_MOCK[index].name,
-                      style: Theme.of(context).textTheme.bodyText1,
+              child: pageController.isLoading
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                        color: CustomColors.darkerGreen,
+                      ),
+                    )
+                  : ValueListenableBuilder(
+                      valueListenable: pageController.exercisesList,
+                      builder: (context, value, child) {
+                        return ListView.separated(
+                          physics: const BouncingScrollPhysics(),
+                          itemCount: pageController.exercisesList.value.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Text(
+                              pageController.exercisesList.value[index].name,
+                              style: Theme.of(context).textTheme.bodyText1,
+                            );
+                          },
+                          separatorBuilder: (context, index) =>
+                              const Divider(thickness: 2),
+                        );
+                      },
                     ),
-                  );
-                },
-                separatorBuilder: (context, index) =>
-                    const Divider(thickness: 2),
-              ),
             ),
           ],
         ),
