@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
+import 'package:my_gym_track/src/application/services/locator.dart';
 import 'package:my_gym_track/src/domain/entities/exercise/exercise_entity.dart';
 import 'package:my_gym_track/src/domain/use_cases/get_all_exercises/get_all_exercises_usecase.dart';
 
-@injectable
 class AllExercisesController {
   bool isLoading = false;
   bool hasError = false;
   
-  final GetAllExercisesUsecase _getAllExercisesUsecase;
-
-  AllExercisesController(this._getAllExercisesUsecase);
+  final GetAllExercisesUsecase _getAllExercisesUsecase = getIt<GetAllExercisesUsecase>();
 
   final ValueNotifier<int> selected = ValueNotifier<int>(0);
 

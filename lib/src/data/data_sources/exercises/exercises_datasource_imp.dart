@@ -1,12 +1,9 @@
 import 'dart:convert';
-
 import 'package:flutter/services.dart';
-import 'package:injectable/injectable.dart';
 import 'package:my_gym_track/src/data/data_sources/exercises/exercises_datasource.dart';
 import 'package:my_gym_track/src/data/models/exercise_model.dart';
 import 'package:my_gym_track/src/domain/entities/exercise/exercise_entity.dart';
 
-@Injectable(as: ExercisesDatasource)
 class ExercisesDatasourceImp implements ExercisesDatasource {
   ExercisesDatasourceImp();
 
