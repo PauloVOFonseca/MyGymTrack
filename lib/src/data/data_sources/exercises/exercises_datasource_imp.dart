@@ -12,7 +12,7 @@ class ExercisesDatasourceImp implements ExercisesDatasource {
     try {
       final String response =
           await rootBundle.loadString('assets/mocks/exercise_list.json');
-      final data = await json.decode(response);
+      final data = json.decode(response);
 
       final responseList = data['EXERCISES_LIST_MOCK'] as List;
 
