@@ -11,21 +11,31 @@ class AllExercisesBloc extends Bloc<AllExercisesEvent, AllExercisesState> {
   final GetAllExercisesUsecase _getAllExercisesUsecase =
       getIt<GetAllExercisesUsecase>();
 
+  int selected = 0;
+
   AllExercisesBloc() : super(AllExercisesLoading()) {
     on<FetchExercisesList>((event, emit) async {
-      await Future.delayed(const Duration(seconds: 3), () async {
-        final result = await _getAllExercisesUsecase.call();
-        result.fold(
-          (l) {
-            emit(AllExercisesError(errorMessage: l));
-          },
-          (r) {
-            r.sort((a, b) => a.name.compareTo(b.name));
-            emit(AllExercisesLoaded(exercisesList: r));
-          },
-        );
-      });
+      emit(AllExercisesLoading());
+      await _onExerciseFetch(event, emit);
     });
-    on<UpdateExercisesList>((event, emit) => null);
+  }
+
+  Future<void> _onExerciseFetch(
+    FetchExercisesList event,
+    Emitter<AllExercisesState> emit,
+  ) async {
+    await Future.delayed(const Duration(seconds: 3), () async {
+      final result =
+          await _getAllExercisesUsecase.call(muscleGroup: event.muscleGroup);
+      result.fold(
+        (error) {
+          emit(AllExercisesError(errorMessage: error));
+        },
+        (exerciseList) {
+          exerciseList.sort((a, b) => a.name.compareTo(b.name));
+          emit(AllExercisesLoaded(exercisesList: exerciseList));
+        },
+      );
+    });
   }
 }

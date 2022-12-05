@@ -63,22 +63,21 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
                         onTap: () {
-                          // pageController.selected.value = index;
-                          // pageController.updateExerciseList(MUSCLE_LIST[index]);
+                          bloc.selected = index;
+                          bloc.add(FetchExercisesList(
+                              muscleGroup: MUSCLE_LIST[index]));
                           setState(() {});
                         },
                         child: Text(
                           MUSCLE_LIST[index],
-                          style:
-                              // pageController.selected.value == index
-                              //     ? Theme.of(context)
-                              //         .textTheme
-                              //         .labelMedium
-                              //         ?.copyWith(
-                              //           color: CustomColors.darkerGreen,
-                              //         )
-                              //     :
-                              Theme.of(context).textTheme.labelMedium,
+                          style: bloc.selected == index
+                              ? Theme.of(context)
+                                  .textTheme
+                                  .labelMedium
+                                  ?.copyWith(
+                                    color: CustomColors.darkerGreen,
+                                  )
+                              : Theme.of(context).textTheme.labelMedium,
                         ),
                       );
                     },

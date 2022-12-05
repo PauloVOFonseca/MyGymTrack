@@ -2,7 +2,7 @@ part of 'all_exercises_bloc.dart';
 
 abstract class AllExercisesState extends Equatable {
   const AllExercisesState();
-  
+
   @override
   List<Object> get props => [];
 }
@@ -13,6 +13,9 @@ class AllExercisesLoaded extends AllExercisesState {
   final List<ExerciseEntity> exercisesList;
 
   const AllExercisesLoaded({required this.exercisesList});
+
+  @override
+  List<Object> get props => [exercisesList];
 }
 
 class AllExercisesError extends AllExercisesState {

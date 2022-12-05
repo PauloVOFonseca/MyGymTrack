@@ -7,6 +7,14 @@ abstract class AllExercisesEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FetchExercisesList extends AllExercisesEvent{}
+class FetchExercisesList extends AllExercisesEvent{
+  final String? muscleGroup;
 
-class UpdateExercisesList extends AllExercisesEvent{}
+  const FetchExercisesList({this.muscleGroup});
+}
+
+class UpdateExercisesList extends AllExercisesEvent{
+  final String muscleGroup;
+
+  const UpdateExercisesList({required this.muscleGroup});
+}
