@@ -8,7 +8,7 @@ class GetAllExercisesUsecaseImp implements GetAllExercisesUsecase {
   ExercisesRepository repository = getIt<ExercisesRepository>();
 
   @override
-  Future<Either<String, List<ExerciseEntity>>> call() async {
-    return await repository.get();
+  Future<Either<String, List<ExerciseEntity>>> call({String? muscleGroup}) async {
+    return await repository.get(muscleGroup);
   }
 }

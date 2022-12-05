@@ -8,9 +8,9 @@ class ExercisesRepositoryImp implements ExercisesRepository {
   ExercisesDatasource datasource = getIt<ExercisesDatasource>();
 
   @override
-  Future<Either<String, List<ExerciseEntity>>> get() async {
+  Future<Either<String, List<ExerciseEntity>>> get(String? muscleGroup) async {
     try {
-      final result = await datasource.get();
+      final result = await datasource.get(muscleGroup);
       return Right(result);
     } on Exception catch (error) {
       return Left(

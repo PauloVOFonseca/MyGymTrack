@@ -8,13 +8,18 @@ class ExercisesDatasourceImp implements ExercisesDatasource {
   ExercisesDatasourceImp();
 
   @override
-  Future<List<ExerciseEntity>> get() async {
+  Future<List<ExerciseEntity>> get(String? muscleGroup) async {
     try {
       final String response =
           await rootBundle.loadString('assets/mocks/exercise_list.json');
       final data = json.decode(response);
 
       final responseList = data['EXERCISES_LIST_MOCK'] as List;
+
+      if (muscleGroup != null && muscleGroup != "Todos") {
+        responseList.removeWhere(
+            (element) => !element['category'].contains(muscleGroup));
+      }
 
       return responseList
           .map((e) => ExerciseModel.fromJson(e).toEntity())

@@ -1,5 +1,6 @@
 import 'package:my_gym_track/src/domain/entities/exercise/exercise_entity.dart';
 
+// ignore: non_constant_identifier_names
 List<ExerciseEntity> EXERCISES_LIST_MOCK = [
   //!PEITO
   ExerciseEntity(name: "Flexão", category: ['Peito']),

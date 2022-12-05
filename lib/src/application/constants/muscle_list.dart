@@ -1,3 +1,4 @@
+  // ignore: constant_identifier_names
   const List<String> MUSCLE_LIST = [
     'Todos',
     'Bíceps',
