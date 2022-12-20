@@ -24,7 +24,7 @@ class AllExercisesBloc extends Bloc<AllExercisesEvent, AllExercisesState> {
     FetchExercisesList event,
     Emitter<AllExercisesState> emit,
   ) async {
-    await Future.delayed(const Duration(seconds: 3), () async {
+    await Future.delayed(const Duration(seconds: 1), () async {
       final result =
           await _getAllExercisesUsecase.call(muscleGroup: event.muscleGroup);
       result.fold(

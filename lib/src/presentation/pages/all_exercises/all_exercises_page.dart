@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_gym_track/src/application/constants/muscle_list.dart';
 import 'package:my_gym_track/src/application/theme/custom_colors.dart';
 import 'package:my_gym_track/src/presentation/pages/all_exercises/bloc/all_exercises_bloc.dart';
+import 'package:my_gym_track/src/presentation/pages/all_exercises/widgets/exercise_list_widget.dart';
+import 'package:my_gym_track/src/presentation/pages/all_exercises/widgets/muscle_group_tab_bar_widget.dart';
 
 class AllExercisesPage extends StatefulWidget {
   const AllExercisesPage({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
   @override
   void initState() {
     super.initState();
-    bloc.add(FetchExercisesList());
+    bloc.add(const FetchExercisesList());
   }
 
   @override
@@ -51,77 +51,8 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
               ],
             ),
             const SizedBox(height: 8),
-            SizedBox(
-              height: 40,
-              child: BlocBuilder<AllExercisesBloc, AllExercisesState>(
-                bloc: bloc,
-                builder: (context, state) {
-                  return ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    physics: const BouncingScrollPhysics(),
-                    itemCount: MUSCLE_LIST.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return GestureDetector(
-                        onTap: () {
-                          bloc.selected = index;
-                          bloc.add(FetchExercisesList(
-                              muscleGroup: MUSCLE_LIST[index]));
-                          setState(() {});
-                        },
-                        child: Text(
-                          MUSCLE_LIST[index],
-                          style: bloc.selected == index
-                              ? Theme.of(context)
-                                  .textTheme
-                                  .labelMedium
-                                  ?.copyWith(
-                                    color: CustomColors.darkerGreen,
-                                  )
-                              : Theme.of(context).textTheme.labelMedium,
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) =>
-                        const SizedBox(width: 10),
-                  );
-                },
-              ),
-            ),
-            Expanded(
-              child: BlocBuilder<AllExercisesBloc, AllExercisesState>(
-                bloc: bloc,
-                builder: (context, state) {
-                  if (state is AllExercisesLoaded) {
-                    return ListView.separated(
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: state.exercisesList.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Text(
-                          state.exercisesList[index].name,
-                          style: Theme.of(context).textTheme.bodyText1,
-                        );
-                      },
-                      separatorBuilder: (context, index) =>
-                          const Divider(thickness: 2),
-                    );
-                  }
-                  if (state is AllExercisesError) {
-                    return Center(
-                      child: Text(
-                        state.errorMessage,
-                        style: Theme.of(context).textTheme.bodyText1,
-                        textAlign: TextAlign.center,
-                      ),
-                    );
-                  }
-                  return const Center(
-                    child: CircularProgressIndicator(
-                      color: CustomColors.darkerGreen,
-                    ),
-                  );
-                },
-              ),
-            ),
+            MuscleGroupTabBarWidget(bloc: bloc),
+            ExerciseListWidget(bloc: bloc),
           ],
         ),
       ),
