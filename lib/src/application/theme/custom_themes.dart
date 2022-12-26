@@ -19,6 +19,21 @@ class CustomThemes {
         fontWeight: FontWeight.w600,
         overflow: TextOverflow.clip,
       ),
+      headline2: TextStyle(
+        color: CustomColors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+      ),
+      bodyText1: TextStyle(
+        color: CustomColors.black,
+        fontSize: 18,
+        fontWeight: FontWeight.w400,
+      ),
+      labelMedium: TextStyle(
+        color: CustomColors.black,
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      ),
     ),
   );
 }
