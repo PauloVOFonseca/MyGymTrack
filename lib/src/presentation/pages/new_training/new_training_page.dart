@@ -42,10 +42,17 @@ class _NewTrainingPageState extends State<NewTrainingPage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            SizedBox(height: 16),
-            NewTrainingSheetWidget(title: 'true'),
+          children: [
+            const SizedBox(height: 16),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                "Crie uma ficha usando o botão abaixo.",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline2,
+              ),
+            ),
+            //NewTrainingSheetWidget(title: 'true'),
           ],
         ),
       ),
