@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_gym_track/src/application/services/locator.dart';
 import 'package:my_gym_track/src/application/theme/custom_colors.dart';
-import 'package:my_gym_track/src/presentation/pages/new_training/widgets/new_training_sheet_widget.dart';
+import 'package:my_gym_track/src/presentation/pages/new_training/bloc/new_training_bloc.dart';
 
 class NewTrainingPage extends StatefulWidget {
   const NewTrainingPage({Key? key}) : super(key: key);
@@ -10,12 +11,14 @@ class NewTrainingPage extends StatefulWidget {
 }
 
 class _NewTrainingPageState extends State<NewTrainingPage> {
+  final NewTrainingBloc bloc = getIt<NewTrainingBloc>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
+          bloc.goToTrainingDivisionpage(context);
         },
         backgroundColor: CustomColors.primaryGreen,
         child: const Icon(Icons.add),
@@ -44,14 +47,14 @@ class _NewTrainingPageState extends State<NewTrainingPage> {
         child: Column(
           children: [
             const SizedBox(height: 16),
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                "Crie uma ficha usando o botão abaixo.",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline2,
-              ),
-            ),
+            // Align(
+            //   alignment: Alignment.center,
+            //   child: Text(
+            //     "Crie uma ficha usando o botão abaixo.",
+            //     textAlign: TextAlign.center,
+            //     style: Theme.of(context).textTheme.headline2,
+            //   ),
+            // ),
             //NewTrainingSheetWidget(title: 'true'),
           ],
         ),

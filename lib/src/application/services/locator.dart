@@ -6,12 +6,18 @@ import 'package:my_gym_track/src/domain/repositories/exercises/exercises_reposit
 import 'package:my_gym_track/src/domain/use_cases/get_all_exercises/get_all_exercises_usecase.dart';
 import 'package:my_gym_track/src/domain/use_cases/get_all_exercises/get_all_exercises_usecase_imp.dart';
 import 'package:my_gym_track/src/presentation/pages/all_exercises/all_exercises_controller.dart';
+import 'package:my_gym_track/src/presentation/pages/new_training/bloc/new_training_bloc.dart';
 
 final getIt = GetIt.instance;
 
-void setupGetIt(){
-  getIt.registerLazySingleton<ExercisesDatasource>(() => ExercisesDatasourceImp());
-  getIt.registerLazySingleton<ExercisesRepository>(() => ExercisesRepositoryImp());
-  getIt.registerLazySingleton<GetAllExercisesUsecase>(() => GetAllExercisesUsecaseImp());
-  getIt.registerLazySingleton<AllExercisesController>(() => AllExercisesController());
+void setupGetIt() {
+  getIt.registerLazySingleton<ExercisesDatasource>(
+      () => ExercisesDatasourceImp());
+  getIt.registerLazySingleton<ExercisesRepository>(
+      () => ExercisesRepositoryImp());
+  getIt.registerLazySingleton<GetAllExercisesUsecase>(
+      () => GetAllExercisesUsecaseImp());
+  getIt.registerLazySingleton<AllExercisesController>(
+      () => AllExercisesController());
+  getIt.registerLazySingleton<NewTrainingBloc>(() => NewTrainingBloc());
 }
