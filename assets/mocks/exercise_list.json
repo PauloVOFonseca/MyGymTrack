@@ -1,30 +1,35 @@
 {
     "EXERCISES_LIST_MOCK": [
         {
+            "id": "1",
             "name": "Flexão",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "2",
             "name": "Flexão inclinada",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "3",
             "name": "Flexão declinada",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "4",
             "name": "Flexão declinada",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "5",
             "name": "Flexão diamante",
             "category": [
                 "Peito",
@@ -32,54 +37,63 @@
             ]
         },
         {
+            "id": "6",
             "name": "Crucifixo",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "7",
             "name": "Crucifixo inclinado",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "8",
             "name": "Supino reto",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "9",
             "name": "Supino reto halter",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "10",
             "name": "Supino inclinado",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "11",
             "name": "Supino inclinado halter",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "12",
             "name": "Crossover",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "13",
             "name": "Voador",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "14",
             "name": "Paralela",
             "category": [
                 "Peito",
@@ -87,30 +101,35 @@
             ]
         },
         {
+            "id": "15",
             "name": "Pullover",
             "category": [
                 "Peito"
             ]
         },
         {
+            "id": "16",
             "name": "Encolhimento halter",
             "category": [
                 "Trapézio"
             ]
         },
         {
+            "id": "17",
             "name": "Encolhimento barra",
             "category": [
                 "Trapézio"
             ]
         },
         {
+            "id": "18",
             "name": "Encolhimento barra trás",
             "category": [
                 "Trapézio"
             ]
         },
         {
+            "id": "19",
             "name": "Remada alta",
             "category": [
                 "Trapézio",
@@ -118,6 +137,7 @@
             ]
         },
         {
+            "id": "20",
             "name": "Crucifixo invertido polia",
             "category": [
                 "Trapézio",
@@ -125,6 +145,7 @@
             ]
         },
         {
+            "id": "21",
             "name": "Crucifixo invertido halter",
             "category": [
                 "Trapézio",
@@ -132,66 +153,77 @@
             ]
         },
         {
+            "id": "22",
             "name": "Desenvolvimento halter",
             "category": [
                 "Ombro"
             ]
         },
         {
+            "id": "23",
             "name": "Elevação lateral",
             "category": [
                 "Ombro"
             ]
         },
         {
+            "id": "24",
             "name": "Elevação frontal",
             "category": [
                 "Ombro"
             ]
         },
         {
+            "id": "25",
             "name": "Desenvolvimento militar",
             "category": [
                 "Ombro"
             ]
         },
         {
+            "id": "26",
             "name": "Arnold press",
             "category": [
                 "Ombro"
             ]
         },
         {
+            "id": "27",
             "name": "Barra fixa supinada",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "28",
             "name": "Remada invertida",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "29",
             "name": "Rosca simultânea",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "30",
             "name": "Rosca direta",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "31",
             "name": "Rosca 21",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "32",
             "name": "Rosca martelo",
             "category": [
                 "Bíceps",
@@ -199,6 +231,7 @@
             ]
         },
         {
+            "id": "33",
             "name": "Rosca inversa",
             "category": [
                 "Bíceps",
@@ -206,234 +239,273 @@
             ]
         },
         {
+            "id": "33",
             "name": "Rosca scott",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "34",
             "name": "Rosca scott unilateral",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "35",
             "name": "Rosca concentrada",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "36",
             "name": "Rosca inclinada",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "37",
             "name": "Rosca martelo inclinada",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "38",
             "name": "Rosca polia alta",
             "category": [
                 "Bíceps"
             ]
         },
         {
+            "id": "39",
             "name": "Rosca de punho",
             "category": [
                 "Antebraço"
             ]
         },
         {
+            "id": "40",
             "name": "Rosca de punho invertido",
             "category": [
                 "Antebraço"
             ]
         },
         {
+            "id": "41",
             "name": "Suspensão na barra",
             "category": [
                 "Antebraço"
             ]
         },
         {
+            "id": "42",
             "name": "Skull crusher",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "43",
             "name": "Tríceps francês",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "44",
             "name": "Tríceps francês unilateral",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "45",
             "name": "Tríceps pulley",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "46",
             "name": "Tríceps pulley unilateral",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "47",
             "name": "Tríceps corda",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "48",
             "name": "Tríceps inverso",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "49",
             "name": "Tríceps testa",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "50",
             "name": "Tríceps coice",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "51",
             "name": "Tríceps banco",
             "category": [
                 "Tríceps"
             ]
         },
         {
+            "id": "52",
             "name": "Barra fixa pronada",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "53",
             "name": "Barra fixa supinada",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "54",
             "name": "Barra fixa neutra",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "55",
             "name": "Remada unilateral",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "56",
             "name": "Remada unilateral polia",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "57",
             "name": "Remada baixa neutra",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "58",
             "name": "Remada baixa pronada",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "59",
             "name": "Remada baixa supinada",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "60",
             "name": "Remada neutra",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "61",
             "name": "Remada pronada",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "62",
             "name": "Remada supinada",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "63",
             "name": "Remada curvada supinada",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "64",
             "name": "Remada curvada pronada",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "65",
             "name": "Pulldown",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "66",
             "name": "Remada cavalinho",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "67",
             "name": "Puxador frente neutro",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "68",
             "name": "Puxador frente pronado",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "69",
             "name": "Puxador frente supinado",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "70",
             "name": "Puxador trás",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "71",
             "name": "Levantamento terra",
             "category": [
                 "Dorsal",
@@ -444,6 +516,7 @@
             ]
         },
         {
+            "id": "72",
             "name": "Levantamento terra sumô",
             "category": [
                 "Dorsal",
@@ -454,18 +527,21 @@
             ]
         },
         {
+            "id": "73",
             "name": "Remada inclinada halter",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "74",
             "name": "Remada smith",
             "category": [
                 "Dorsal"
             ]
         },
         {
+            "id": "75",
             "name": "Prancha",
             "category": [
                 "Lombar",
@@ -473,6 +549,7 @@
             ]
         },
         {
+            "id": "76",
             "name": "Elevação pélvica",
             "category": [
                 "Lombar",
@@ -480,6 +557,7 @@
             ]
         },
         {
+            "id": "77",
             "name": "Superman",
             "category": [
                 "Lombar",
@@ -487,12 +565,14 @@
             ]
         },
         {
+            "id": "78",
             "name": "Agachamento",
             "category": [
                 "Lombar"
             ]
         },
         {
+            "id": "79",
             "name": "Bom dia",
             "category": [
                 "Lombar",
@@ -501,90 +581,105 @@
             ]
         },
         {
+            "id": "80",
             "name": "Flexão abdominal",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "81",
             "name": "Elevação de pernas (abdominal infra)",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "82",
             "name": "Elevação de pernas barra fixa",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "83",
             "name": "Russian twist",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "84",
             "name": "Abdominal remador",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "85",
             "name": "Abdominal canivete",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "86",
             "name": "Abdominal bicicleta",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "87",
             "name": "Flexão lateral de tronco",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "88",
             "name": "Prancha lateral",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "89",
             "name": "Abdominal alpinista",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "90",
             "name": "Abdominal com rolinho",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "91",
             "name": "Flutter kicks",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "92",
             "name": "V-sit",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "93",
             "name": "Dragon flag",
             "category": [
                 "Abdômen"
             ]
         },
         {
+            "id": "94",
             "name": "Agachamento livre",
             "category": [
                 "Quadríceps",
@@ -592,6 +687,7 @@
             ]
         },
         {
+            "id": "95",
             "name": "Agachamento smith",
             "category": [
                 "Quadríceps",
@@ -599,6 +695,7 @@
             ]
         },
         {
+            "id": "96",
             "name": "Agachamento sumô",
             "category": [
                 "Quadríceps",
@@ -607,6 +704,7 @@
             ]
         },
         {
+            "id": "97",
             "name": "Agachamento bulgáro",
             "category": [
                 "Quadríceps",
@@ -614,6 +712,7 @@
             ]
         },
         {
+            "id": "98",
             "name": "Agachamento frontal",
             "category": [
                 "Quadríceps",
@@ -621,6 +720,7 @@
             ]
         },
         {
+            "id": "99",
             "name": "Agachamento sissy",
             "category": [
                 "Quadríceps",
@@ -628,6 +728,7 @@
             ]
         },
         {
+            "id": "100",
             "name": "Agachamento pistol",
             "category": [
                 "Quadríceps",
@@ -635,54 +736,63 @@
             ]
         },
         {
+            "id": "101",
             "name": "Cadeira extensora",
             "category": [
                 "Quadríceps"
             ]
         },
         {
+            "id": "102",
             "name": "Afundo",
             "category": [
                 "Quadríceps"
             ]
         },
         {
+            "id": "103",
             "name": "Afundo smith",
             "category": [
                 "Quadríceps"
             ]
         },
         {
+            "id": "104",
             "name": "Afundo smith com step",
             "category": [
                 "Quadríceps"
             ]
         },
         {
+            "id": "105",
             "name": "Avanço",
             "category": [
                 "Quadríceps"
             ]
         },
         {
+            "id": "106",
             "name": "Hack machine",
             "category": [
                 "Quadríceps"
             ]
         },
         {
+            "id": "107",
             "name": "Leg press 45",
             "category": [
                 "Quadríceps"
             ]
         },
         {
+            "id": "108",
             "name": "Leg press 180",
             "category": [
                 "Quadríceps"
             ]
         },
         {
+            "id": "109",
             "name": "Cadeira abdutora",
             "category": [
                 "Quadríceps",
@@ -691,6 +801,7 @@
             ]
         },
         {
+            "id": "110",
             "name": "Cadeira adutora",
             "category": [
                 "Quadríceps",
@@ -699,18 +810,21 @@
             ]
         },
         {
+            "id": "111",
             "name": "Mesa flexora",
             "category": [
                 "Posterior"
             ]
         },
         {
+            "id": "112",
             "name": "Cadeira flexora",
             "category": [
                 "Posterior"
             ]
         },
         {
+            "id": "113",
             "name": "Stiff",
             "category": [
                 "Posterior",
@@ -718,12 +832,14 @@
             ]
         },
         {
+            "id": "114",
             "name": "Flexora de pé unilateral",
             "category": [
                 "Posterior"
             ]
         },
         {
+            "id": "115",
             "name": "Kickbacks",
             "category": [
                 "Posterior",
@@ -731,6 +847,7 @@
             ]
         },
         {
+            "id": "116",
             "name": "Flexão nórdica",
             "category": [
                 "Posterior",
@@ -738,24 +855,28 @@
             ]
         },
         {
+            "id": "117",
             "name": "Elevação de panturrilha",
             "category": [
                 "Panturrilha"
             ]
         },
         {
+            "id": "118",
             "name": "Elevação de panturrilha smith",
             "category": [
                 "Panturrilha"
             ]
         },
         {
+            "id": "119",
             "name": "Elevação de panturrilha 45",
             "category": [
                 "Panturrilha"
             ]
         },
         {
+            "id": "120",
             "name": "Panturrilha sentado",
             "category": [
                 "Panturrilha"

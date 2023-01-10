@@ -7,6 +7,7 @@ part of 'exercise_model.dart';
 // **************************************************************************
 
 ExerciseModel _$ExerciseModelFromJson(Map json) => ExerciseModel(
+      id: json['id'] as String,
       name: json['name'] as String,
       sequence: json['sequence'] as String?,
       progression: (json['progression'] as List<dynamic>?)
@@ -20,6 +21,7 @@ ExerciseModel _$ExerciseModelFromJson(Map json) => ExerciseModel(
 
 Map<String, dynamic> _$ExerciseModelToJson(ExerciseModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'sequence': instance.sequence,
       'repetition': instance.repetition,

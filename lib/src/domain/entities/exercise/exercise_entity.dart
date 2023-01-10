@@ -1,6 +1,7 @@
 import 'package:my_gym_track/src/domain/entities/progression/progression_entity.dart';
 
 class ExerciseEntity {
+  final String id;
   final String name;
   final String? sequence;
   final int? repetition;
@@ -9,6 +10,7 @@ class ExerciseEntity {
   final List<String> category;
 
   ExerciseEntity({
+    required this.id,
     required this.name,
     this.sequence,
     this.repetition,
