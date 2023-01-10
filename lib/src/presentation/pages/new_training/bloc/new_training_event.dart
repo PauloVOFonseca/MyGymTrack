@@ -12,3 +12,15 @@ class UpdateTrainingSheetEvent extends NewTrainingEvent {
 
   const UpdateTrainingSheetEvent({required this.trainingSheet});
 }
+
+class FetchExercisesList extends NewTrainingEvent {
+  final String? muscleGroup;
+
+  const FetchExercisesList({this.muscleGroup});
+}
+
+class UpdateExercisesList extends NewTrainingEvent {
+  final String muscleGroup;
+
+  const UpdateExercisesList({required this.muscleGroup});
+}

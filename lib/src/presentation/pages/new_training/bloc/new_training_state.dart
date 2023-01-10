@@ -19,3 +19,21 @@ class UpdateTrainingSheet extends NewTrainingState {
   @override
   List<Object> get props => [trainingSheet];
 }
+
+class ExercisesListLoading extends NewTrainingState {}
+
+class ExercisesListLoaded extends NewTrainingState {
+  final List<ExerciseEntity> exercisesList;
+
+  const ExercisesListLoaded({required this.exercisesList});
+
+  @override
+  List<Object> get props => [exercisesList];
+}
+
+class ExercisesListError extends NewTrainingState {
+  final String errorMessage;
+  const ExercisesListError({required this.errorMessage});
+}
+
+class ExercisesListEmpty extends NewTrainingState {}
