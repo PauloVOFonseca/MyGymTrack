@@ -1,63 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_gym_track/src/application/theme/custom_colors.dart';
-import 'package:my_gym_track/src/presentation/pages/new_training/bloc/new_training_bloc.dart';
+import 'package:my_gym_track/src/presentation/pages/new_training/new_training_controller.dart';
+import 'package:provider/provider.dart';
 
-class SelectExerciseListWidget extends StatefulWidget {
-  final NewTrainingBloc bloc;
-  const SelectExerciseListWidget({super.key, required this.bloc});
+class SelectExerciseListWidget extends StatelessWidget {
+  const SelectExerciseListWidget({super.key});
 
-  @override
-  State<SelectExerciseListWidget> createState() =>
-      _SelectExerciseListWidgetState();
-}
-
-class _SelectExerciseListWidgetState extends State<SelectExerciseListWidget> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: BlocBuilder<NewTrainingBloc, NewTrainingState>(
-        bloc: widget.bloc,
-        builder: (context, state) {
-          if (state is ExercisesListLoaded) {
-            return ListView.separated(
-              physics: const BouncingScrollPhysics(),
-              itemCount: state.exercisesList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      state.exercisesList[index].name,
-                      style: Theme.of(context).textTheme.bodyText1,
-                    ),
-                    Checkbox(
-                        value: false,
-                        onChanged: (value) {
-                          print(value);
-                        }),
-                  ],
-                );
-              },
-              separatorBuilder: (context, index) => const Divider(thickness: 2),
-            );
-          }
-          if (state is ExercisesListError) {
-            return Center(
-              child: Text(
-                state.errorMessage,
-                style: Theme.of(context).textTheme.bodyText1,
-                textAlign: TextAlign.center,
-              ),
-            );
-          }
-          return const Center(
+    return Consumer<NewTrainingController>(
+        builder: (context, controller, child) {
+      if (controller.pageState == NewTrainingPageState.error) {
+        return Expanded(
+          child: Center(
+            child: Text(
+              controller.errorMessage!,
+              style: Theme.of(context).textTheme.bodyText1,
+              textAlign: TextAlign.center,
+            ),
+          ),
+        );
+      }
+      if (controller.pageState == NewTrainingPageState.loading) {
+        return const Expanded(
+          child: Center(
             child: CircularProgressIndicator(
               color: CustomColors.darkerGreen,
             ),
-          );
-        },
-      ),
-    );
+          ),
+        );
+      }
+      return Expanded(
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 16),
+          child: ListView.separated(
+            physics: const BouncingScrollPhysics(),
+            itemCount: controller.exerciseList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    controller.exerciseList[index].name,
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                  const Icon(Icons.arrow_forward_ios_rounded),
+                ],
+              );
+            },
+            separatorBuilder: (context, index) => const Divider(thickness: 2),
+          ),
+        ),
+      );
+    });
   }
 }
