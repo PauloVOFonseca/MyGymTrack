@@ -3,38 +3,50 @@ import 'package:my_gym_track/src/application/services/locator.dart';
 import 'package:my_gym_track/src/domain/entities/exercise/exercise_entity.dart';
 import 'package:my_gym_track/src/domain/use_cases/get_all_exercises/get_all_exercises_usecase.dart';
 
-class AllExercisesController {
-  bool isLoading = false;
-  bool hasError = false;
-  
-  final GetAllExercisesUsecase _getAllExercisesUsecase = getIt<GetAllExercisesUsecase>();
+enum AllExercisesPageState { loading, loaded, error }
 
-  final ValueNotifier<int> selected = ValueNotifier<int>(0);
+class AllExercisesController with ChangeNotifier {
+  final GetAllExercisesUsecase _getAllExercisesUsecase =
+      getIt<GetAllExercisesUsecase>();
 
-  late ValueNotifier<List<ExerciseEntity>> exercisesList =
-      ValueNotifier<List<ExerciseEntity>>([]);
+  AllExercisesPageState _pageState = AllExercisesPageState.loading;
 
-  getAllExercises() async {
-    isLoading = true;
-    final result = await _getAllExercisesUsecase.call();
-    result.fold(
-      (l) {
-        hasError = true;
-      },
-      (r) {
-        exercisesList = ValueNotifier<List<ExerciseEntity>>(r);
-        exercisesList.value.sort((a, b) => a.name.compareTo(b.name));
-      },
-    );
-    isLoading = false;
+  String? errorMessage;
+
+  int selected = 0;
+
+  List<ExerciseEntity> exerciseList = [];
+
+  AllExercisesController() {
+    fetchExercises();
   }
 
-  updateExerciseList(String muscleGroup) async {
-    await getAllExercises();
+  AllExercisesPageState get pageState => _pageState;
 
-    if (muscleGroup != "Todos") {
-      exercisesList.value
-          .removeWhere((element) => !element.category.contains(muscleGroup));
-    }
+  fetchExercises({String? muscleGroup}) async {
+    _pageState = AllExercisesPageState.loading;
+
+    notifyListeners();
+
+    await Future.delayed(const Duration(seconds: 1), () async {
+      final result =
+          await _getAllExercisesUsecase.call(muscleGroup: muscleGroup);
+      result.fold(
+        (error) {
+          errorMessage = error;
+          _pageState = AllExercisesPageState.error;
+        },
+        (exercises) {
+          exercises.sort((a, b) => a.name.compareTo(b.name));
+          
+          exerciseList.clear();
+          exerciseList = exercises;
+
+          _pageState = AllExercisesPageState.loaded;
+        },
+      );
+    });
+
+    notifyListeners();
   }
 }
