@@ -1,16 +1,24 @@
-# my_gym_track
+# My gym track
 
-A new Flutter project.
+# Introduction
+That's a project aimed at people who go to the gym.
 
-## Getting Started
+In this app you can:
 
-This project is a starting point for a Flutter application.
+    - Create your own workout
+    - View your current workout
+    - Track weight progress in workouts
+    - View your training history
 
-A few resources to get you started if this is your first Flutter project:
+# To Do
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [x] See all exercises registered in the app
+- [ ] Create new workout
+- [ ] View current workout
+- [ ] View training history
+- [ ] View exercise execution video
+- [ ] Record trained and untrained days
+- [ ] View training frequency
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [ ] Create splash animation
+- [ ] Change the entire app design
