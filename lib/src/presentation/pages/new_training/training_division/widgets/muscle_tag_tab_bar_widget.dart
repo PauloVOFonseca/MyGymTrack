@@ -20,12 +20,12 @@ class MuscleTagTabBarWidget extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
-                controller.selected = index;
+                controller.groupSelected = index;
                 controller.fetchExercises(muscleGroup: MUSCLE_LIST[index]);
               },
               child: Text(
                 MUSCLE_LIST[index],
-                style: controller.selected == index
+                style: controller.groupSelected == index
                     ? Theme.of(context).textTheme.labelMedium?.copyWith(
                           color: CustomColors.darkerGreen,
                         )

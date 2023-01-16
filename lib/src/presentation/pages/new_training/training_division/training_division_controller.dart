@@ -13,7 +13,7 @@ class TrainingDivisionController extends ChangeNotifier {
 
   String? errorMessage;
 
-  int selected = 0;
+  int groupSelected = 0;
 
   List<ExerciseEntity> exerciseList = [];
 
