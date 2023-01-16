@@ -14,6 +14,7 @@ class _TrainingDivisionPageState extends State<TrainingDivisionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CustomColors.white,
       appBar: AppBar(
         backgroundColor: CustomColors.white,
         title: const Text("Exercícios"),
@@ -26,7 +27,7 @@ class _TrainingDivisionPageState extends State<TrainingDivisionPage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
