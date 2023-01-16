@@ -9,6 +9,7 @@ In this app you can:
     - View your current workout
     - Track weight progress in workouts
     - View your training history
+    - View training frequency
 
 # To Do
 
