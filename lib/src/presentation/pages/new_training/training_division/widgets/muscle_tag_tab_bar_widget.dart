@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_gym_track/src/application/constants/muscle_list.dart';
 import 'package:my_gym_track/src/application/theme/custom_colors.dart';
-import 'package:my_gym_track/src/presentation/pages/new_training/new_training_controller.dart';
+import 'package:my_gym_track/src/presentation/pages/new_training/training_division/training_division_controller.dart';
 import 'package:provider/provider.dart';
 
 class MuscleTagTabBarWidget extends StatelessWidget {
@@ -9,7 +9,7 @@ class MuscleTagTabBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<NewTrainingController>(
+    return Consumer<TrainingDivisionController>(
         builder: (context, controller, child) {
       return SizedBox(
         height: 40,
