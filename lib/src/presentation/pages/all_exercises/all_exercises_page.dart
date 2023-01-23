@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_gym_track/src/application/routes/route_service.dart';
 import 'package:my_gym_track/src/application/theme/custom_colors.dart';
 import 'package:my_gym_track/src/presentation/pages/all_exercises/all_exercises_controller.dart';
 import 'package:my_gym_track/src/presentation/pages/all_exercises/widgets/exercise_list_widget.dart';
@@ -24,7 +25,7 @@ class _AllExercisesPageState extends State<AllExercisesPage> {
         title: const Text("Exercícios"),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => RouteService.instance.pop(),
           icon: const Icon(Icons.arrow_back_ios),
           color: CustomColors.black,
           iconSize: 25,

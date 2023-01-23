@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:my_gym_track/src/application/constants/images_assets.dart';
-import 'package:my_gym_track/src/presentation/pages/all_exercises/all_exercises_page.dart';
+import 'package:my_gym_track/src/application/routes/route_handler.dart';
+import 'package:my_gym_track/src/application/routes/route_service.dart';
 import 'package:my_gym_track/src/presentation/pages/home/widgets/item_template_widget.dart';
-import 'package:my_gym_track/src/presentation/pages/new_training/new_training_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,6 +13,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    setNavigationContext();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,25 +56,23 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 16),
               ItemTemplateWidget(
                 title: 'Novo treino',
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const NewTrainingPage()),
-                ),
+                onTap: () => RouteService.instance.goToNewTrainingPage(),
               ),
               const SizedBox(height: 16),
               ItemTemplateWidget(
                 title: 'Todos exercícios',
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AllExercisesPage()),
-                ),
+                onTap: () => RouteService.instance.goToAllExercisesPage(),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void setNavigationContext() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      GetIt.I.get<RouteHandler>().configure(context);
+    });
   }
 }
