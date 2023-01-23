@@ -6,6 +6,7 @@ part 'exercise_model.g.dart';
 
 @JsonSerializable(anyMap: true)
 class ExerciseModel {
+  final String id;
   final String name;
   final String? sequence;
   final int? repetition;
@@ -13,6 +14,7 @@ class ExerciseModel {
   final List<String> category;
 
   ExerciseModel({
+    required this.id,
     required this.name,
     this.sequence,
     this.progression,
@@ -30,6 +32,7 @@ class ExerciseModel {
 
 ExerciseEntity _$ExerciseModelToEntity(ExerciseModel exerciseModel) {
   return ExerciseEntity(
+    id: exerciseModel.id,
     name: exerciseModel.name,
     sequence: exerciseModel.sequence,
     repetition: exerciseModel.repetition,

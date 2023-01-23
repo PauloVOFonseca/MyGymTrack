@@ -3,28 +3,30 @@ import 'package:my_gym_track/src/application/services/locator.dart';
 import 'package:my_gym_track/src/domain/entities/exercise/exercise_entity.dart';
 import 'package:my_gym_track/src/domain/use_cases/get_all_exercises/get_all_exercises_usecase.dart';
 
-enum AllExercisesPageState { loading, loaded, error }
+enum TrainingDivisionPageState { loading, loaded, error }
 
-class AllExercisesController with ChangeNotifier {
+class TrainingDivisionController extends ChangeNotifier {
   final GetAllExercisesUsecase _getAllExercisesUsecase =
       getIt<GetAllExercisesUsecase>();
 
-  AllExercisesPageState _pageState = AllExercisesPageState.loading;
+  TrainingDivisionPageState _pageState = TrainingDivisionPageState.loading;
 
   String? errorMessage;
 
-  int selected = 0;
+  int groupSelected = 0;
 
   List<ExerciseEntity> exerciseList = [];
 
-  AllExercisesController() {
+  List<ExerciseEntity> selectedExercises = [];
+
+  TrainingDivisionController() {
     fetchExercises();
   }
 
-  AllExercisesPageState get pageState => _pageState;
+  TrainingDivisionPageState get pageState => _pageState;
 
-  fetchExercises({String? muscleGroup}) async {
-    _pageState = AllExercisesPageState.loading;
+  void fetchExercises({String? muscleGroup}) async {
+    _pageState = TrainingDivisionPageState.loading;
 
     notifyListeners();
 
@@ -34,19 +36,31 @@ class AllExercisesController with ChangeNotifier {
       result.fold(
         (error) {
           errorMessage = error;
-          _pageState = AllExercisesPageState.error;
+          _pageState = TrainingDivisionPageState.error;
         },
         (exercises) {
           exercises.sort((a, b) => a.name.compareTo(b.name));
-          
           exerciseList.clear();
           exerciseList = exercises;
 
-          _pageState = AllExercisesPageState.loaded;
+          _pageState = TrainingDivisionPageState.loaded;
         },
       );
     });
 
     notifyListeners();
   }
+
+  void onSelectWorkout(ExerciseEntity exercise) {
+
+    if (exerciseIsAlreadyOnList(exercise.id)) {
+      selectedExercises.removeWhere((element) => element.id == exercise.id);
+    } else {
+      selectedExercises.add(exercise);
+    }
+    notifyListeners();
+  }
+
+  bool exerciseIsAlreadyOnList(String id) =>
+      selectedExercises.any((element) => element.id == id);
 }

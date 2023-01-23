@@ -10,4 +10,5 @@ class CustomColors {
   static const Color mediumGreen = Color(0xFF74DCB4);
   static const Color mediumGrey = Color(0xFF555757);
   static const Color white = Color(0xFFFFFFFF);
+  static Color transparentGreen = const Color(0xFF04BB7C).withOpacity(0.2);
 }
