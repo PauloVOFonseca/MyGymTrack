@@ -3,6 +3,7 @@ import 'package:my_gym_track/src/application/theme/custom_colors.dart';
 
 class CustomThemes {
   static final defaultTheme = ThemeData(
+    primarySwatch: Colors.lightGreen,
     fontFamily: 'FiraSans',
     appBarTheme: const AppBarTheme(
       iconTheme: IconThemeData(color: CustomColors.black),
