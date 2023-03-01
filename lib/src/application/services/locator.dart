@@ -8,7 +8,6 @@ import 'package:my_gym_track/src/data/repositories/exercises/exercises_repositor
 import 'package:my_gym_track/src/domain/repositories/exercises/exercises_repository.dart';
 import 'package:my_gym_track/src/domain/use_cases/get_all_exercises/get_all_exercises_usecase.dart';
 import 'package:my_gym_track/src/domain/use_cases/get_all_exercises/get_all_exercises_usecase_imp.dart';
-import 'package:my_gym_track/src/presentation/pages/all_exercises/all_exercises_controller.dart';
 
 final getIt = GetIt.instance;
 
@@ -21,6 +20,4 @@ void setupGetIt() {
       () => ExercisesRepositoryImp());
   getIt.registerLazySingleton<GetAllExercisesUsecase>(
       () => GetAllExercisesUsecaseImp());
-  getIt.registerLazySingleton<AllExercisesController>(
-      () => AllExercisesController());
 }
