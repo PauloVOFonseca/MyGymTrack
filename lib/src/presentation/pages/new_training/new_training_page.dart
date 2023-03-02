@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_gym_track/src/application/routes/route_service.dart';
 import 'package:my_gym_track/src/application/theme/custom_colors.dart';
-import 'package:my_gym_track/src/presentation/pages/new_training/new_training_controller.dart';
-import 'package:provider/provider.dart';
+import 'package:my_gym_track/src/presentation/pages/new_training/bloc/new_training_bloc.dart';
 
 class NewTrainingPage extends StatefulWidget {
   const NewTrainingPage({Key? key}) : super(key: key);
@@ -12,15 +11,14 @@ class NewTrainingPage extends StatefulWidget {
 }
 
 class _NewTrainingPageState extends State<NewTrainingPage> {
-  late NewTrainingController pageController;
+  final NewTrainingBloc bloc = NewTrainingBloc();
 
   @override
   Widget build(BuildContext context) {
-    pageController = context.watch<NewTrainingController>();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          pageController.goToTrainingDivisionpage(context);
+          bloc.goToTrainingDivisionpage(context);
         },
         backgroundColor: CustomColors.primaryGreen,
         child: const Icon(Icons.add),
